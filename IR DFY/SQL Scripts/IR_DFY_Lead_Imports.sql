@@ -1,5 +1,7 @@
 CREATE TABLE IR_DFY_Lead_Imports (
     ID INT PRIMARY KEY IDENTITY(1,1),
+    RecordInsertTimeStamp datetime2(7) NULL,
+    UAK uniqueidentifier NULL,
     name NVARCHAR(255),
     phone NVARCHAR(50),
     email NVARCHAR(255),
@@ -54,4 +56,10 @@ CREATE TABLE IR_DFY_Lead_Imports (
     g_maps_claimed BIT,
     search_keyword NVARCHAR(255),
     search_city NVARCHAR(255)
+    
 );
+
+GO
+ALTER TABLE [dbo].[IR_DFY_Lead_Imports] ADD  DEFAULT (getdate()) FOR [RecordInsertTimeStamp]
+GO
+ALTER TABLE [dbo].[IR_DFY_Lead_Imports] ADD  DEFAULT (newsequentialid()) FOR [UAK]
