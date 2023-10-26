@@ -1,4 +1,4 @@
-CREATE TABLE IR_DFY_Lead_Imports (
+CREATE TABLE [RAW_IR_DFY_Request].[IR_DFY_Lead_Imports] (
     ID INT PRIMARY KEY IDENTITY(1,1),
     RecordInsertTimeStamp datetime2(7) NULL,
     UAK uniqueidentifier NULL,
